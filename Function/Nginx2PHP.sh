@@ -22,7 +22,6 @@ function NginX2PHP(){
 	green " Nginx与PHP交互配置完成..."
 	green " =================================================="
 	echo "<?php phpinfo(); ?>" >> /usr/local/nginx/html/index.php
-	FirewalldConfig
 	green " =================================================="
 	green " 请访问主机/index.php查看是否生效"
 	green " =================================================="
