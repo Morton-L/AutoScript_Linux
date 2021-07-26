@@ -14,7 +14,7 @@ url2=https://tools.topstalk.com/shellscript/AutoScript_Linux
 nginx=$(echo $* | grep -o 'nginx')
 openssl=$(echo $* | grep -o 'openssl')
 php=$(echo $* | grep -o 'php')
-n2php=$(echo $* | grep -o 'n2php')
+n2p=$(echo $* | grep -o 'n2p')
 
 
 if [ -n "$nginx" ]; then
@@ -47,7 +47,7 @@ if [ -n "$php" ]; then
 	AutoInstallPHP
 fi
 
-if [ -n "$n2php" ]; then
+if [ -n "$n2p" ]; then
 	curl -Oks $url1/Function/Nginx2PHP.sh
 	if [ $? -ne 0 ]; then
             curl -Oks $url2/Function/Nginx2PHP.sh
