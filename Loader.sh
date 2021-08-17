@@ -15,7 +15,17 @@ nginx=$(echo $* | grep -o 'nginx')
 openssl=$(echo $* | grep -o 'openssl')
 php=$(echo $* | grep -o 'php')
 n2p=$(echo $* | grep -o 'n2p')
+nodejs=$(echo $* | grep -o 'nodejs')
 
+if [ -n "$nodejs" ]; then
+	curl -Oks $url1/Function/AutoInstallNodejs.sh
+	if [ $? -ne 0 ]; then
+            curl -Oks $url2/Function/AutoInstallNodejs.sh
+            [ $? -ne 0 ] && Error
+	fi
+	source AutoInstallNodejs.sh
+	AutoInstallNodejs
+fi
 
 if [ -n "$nginx" ]; then
 	curl -Oks $url1/Function/AutoInstallNginx.sh
