@@ -21,7 +21,7 @@ if [ -n "$nginx" ]; then
 	curl -Oks $url1/Function/AutoInstallNginx.sh
 	if [ $? -ne 0 ]; then
             curl -Oks $url2/Function/AutoInstallNginx.sh
-            [ $? -ne 0 ] && error
+            [ $? -ne 0 ] && Error
 	fi
 	source AutoInstallNginx.sh
 	AutoInstallNginx
@@ -31,7 +31,7 @@ if [ -n "$openssl" ]; then
 	curl -Oks $url1/Function/AutoInstallOpenSSL.sh
 	if [ $? -ne 0 ]; then
             curl -Oks $url2/Function/AutoInstallOpenSSL.sh
-            [ $? -ne 0 ] && error
+            [ $? -ne 0 ] && Error
 	fi
 	source AutoInstallOpenSSL.sh
 	AutoInstallOpenSSL
@@ -41,7 +41,7 @@ if [ -n "$php" ]; then
 	curl -Oks $url1/Function/AutoInstallPHP.sh
 	if [ $? -ne 0 ]; then
             curl -Oks $url2/Function/AutoInstallPHP.sh
-            [ $? -ne 0 ] && error
+            [ $? -ne 0 ] && Error
 	fi
 	source AutoInstallPHP.sh
 	AutoInstallPHP
@@ -51,7 +51,7 @@ if [ -n "$n2p" ]; then
 	curl -Oks $url1/Function/Nginx2PHP.sh
 	if [ $? -ne 0 ]; then
             curl -Oks $url2/Function/Nginx2PHP.sh
-            [ $? -ne 0 ] && error
+            [ $? -ne 0 ] && Error
 	fi
 	source Nginx2PHP.sh
 	NginX2PHP

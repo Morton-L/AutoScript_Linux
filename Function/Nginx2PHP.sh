@@ -1,4 +1,7 @@
 
+curl -Oks https://raw.githubusercontent.com/Morton-L/HeadScript_Linux/main/loader.sh
+source loader.sh error
+
 # 对接
 function NginX2PHP(){
 	green " 实现交互..."

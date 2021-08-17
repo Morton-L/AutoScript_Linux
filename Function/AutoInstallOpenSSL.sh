@@ -1,5 +1,8 @@
 #!/bin/bash
 
+curl -Oks https://raw.githubusercontent.com/Morton-L/HeadScript_Linux/main/loader.sh
+source loader.sh error
+
 # 编译安装OpenSSL
 function AutoInstallOpenSSL(){
     green " =================================================="
