@@ -21,22 +21,32 @@ function AutoInstallNodejs(){
 	ln -s /usr/local/lib/nodejs/bin/node /usr/bin/node
 	ln -s /usr/local/lib/nodejs/bin/npm /usr/bin/npm
 	ln -s /usr/local/lib/nodejs/bin/npx /usr/bin/npx
+	green " =================================================="
+	green " 验证安装..."
+	green " =================================================="
+	green " =================================================="
+	green " Node版本信息:"
 	node -v
 	# 判断执行结果
 	if [ $? -ne 0 ]; then
 		ErrorInfo=" 安装失败...请查看日志"
 		Error
 	fi
+	green " =================================================="
 	npm version
+	green " npm版本信息:"
 	# 判断执行结果
 	if [ $? -ne 0 ]; then
 		ErrorInfo=" 安装失败...请查看日志"
 		Error
 	fi
+	green " =================================================="
+	green " npx版本信息:"
 	npx -v
 	# 判断执行结果
 	if [ $? -ne 0 ]; then
 		ErrorInfo=" 安装失败...请查看日志"
 		Error
 	fi
+	green " =================================================="
 }
