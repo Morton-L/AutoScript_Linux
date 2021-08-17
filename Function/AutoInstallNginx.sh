@@ -9,7 +9,7 @@ function AutoInstallNginx(){
 	green " Nginx安装准备..."
 	green " =================================================="
 	sleep 2s
-	yum install -y pcre-devel zlib-devel perl gcc wget
+	yum install -y pcre-devel zlib-devel perl gcc wget net-tools tar
 	
 	# 判断执行结果
 	if [ $? -ne 0 ]; then
