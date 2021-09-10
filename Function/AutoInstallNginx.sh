@@ -5,6 +5,23 @@ source loader.sh error
 
 # 编译安装Nginx
 function AutoInstallNginx(){
+
+	configure="--with-http_ssl_module --with-http_v2_module"
+	green " =================================================="
+	green " 请输入安装配置项,如无额外配置可留空 "
+	green " 默认安装配置项 :"
+	yellow " $configure"
+	green " =================================================="
+	read -p " 请输入安装配置项,如无额外配置可留空 :" configureE
+	
+	configure="${configure} ${configureE}"
+	
+	green " =================================================="
+	green " 安装配置项为 :"
+	yellow " $configure"
+	green " =================================================="
+	sleep 4s
+	
 	green " =================================================="
 	green " Nginx安装准备..."
 	green " =================================================="
@@ -46,7 +63,7 @@ function AutoInstallNginx(){
 	fi
 	tar -xvzf nginx-1.21.1.tar.gz
 	cd /usr/local/nginx-1.21.1
-	./configure --with-http_ssl_module --with-http_v2_module
+	./configure $configure
 	green " =================================================="
 	green " 开始编译并安装Nginx..."
 	green " =================================================="
