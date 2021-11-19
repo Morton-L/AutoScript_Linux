@@ -20,14 +20,14 @@ function AutoInstallOpenSSL(){
 	green " =================================================="
 	green " 开始下载OpenSSL源码..."
 	green " =================================================="
-	wget https://www.openssl.org/source/openssl-1.1.1k.tar.gz
+	wget --no-check-certificate https://www.openssl.org/source/openssl-1.1.1l.tar.gz
 	# 判断执行结果
 	if [ $? -ne 0 ]; then
 		ErrorInfo=" 下载失败...请检查网络连接"
 		Error
 	fi
-	tar -xvzf openssl-1.1.1k.tar.gz
-	cd openssl-1.1.1k
+	tar -xvzf openssl-1.1.1l.tar.gz
+	cd openssl-1.1.1l
 	./Configure
 	./config
 	green " =================================================="
