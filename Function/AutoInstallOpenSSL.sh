@@ -28,7 +28,7 @@ function AutoInstallOpenSSL(){
 		Error
 	fi
 	tar -xvzf openssl-${InstallOpenSSLVersion}.tar.gz
-	cd ${InstallOpenSSLVersion}
+	cd openssl-${InstallOpenSSLVersion}
 	./Configure
 	./config
 	green " =================================================="
