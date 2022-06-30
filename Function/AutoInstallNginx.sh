@@ -55,14 +55,14 @@ function AutoInstallNginx(){
 	green " =================================================="
 	green " 开始下载Nginx源码..."
 	green " =================================================="
-	wget http://nginx.org/download/nginx-1.21.6.tar.gz
+	wget http://nginx.org/download/nginx-1.23.0.tar.gz
 	# 判断执行结果
 	if [ $? -ne 0 ]; then
 		ErrorInfo=" 下载失败...请检查网络连接"
 		Error
 	fi
-	tar -xvzf nginx-1.21.6.tar.gz
-	cd /usr/local/nginx-1.21.6
+	tar -xvzf nginx-1.23.0.tar.gz
+	cd /usr/local/nginx-1.23.0
 	./configure $configure
 	green " =================================================="
 	green " 开始编译并安装Nginx..."
