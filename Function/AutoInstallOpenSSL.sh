@@ -9,7 +9,7 @@ function AutoInstallOpenSSL(){
 	green " 开始安装OpenSSL"
 	green " =================================================="
 	sleep 6s
-	yum remove -y openssl
+	# yum remove -y openssl
 	InstallOpenSSLVersion="1.1.1m"
 	yum install -y wget tar perl gcc
 	# 判断执行结果
@@ -28,7 +28,7 @@ function AutoInstallOpenSSL(){
 		Error
 	fi
 	tar -xvzf openssl-${InstallOpenSSLVersion}.tar.gz
-	cd ${InstallOpenSSLVersion}
+	cd openssl-${InstallOpenSSLVersion}
 	./Configure
 	./config
 	green " =================================================="
