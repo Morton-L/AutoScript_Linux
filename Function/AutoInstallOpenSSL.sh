@@ -10,7 +10,7 @@ function AutoInstallOpenSSL(){
 	green " =================================================="
 	sleep 6s
 	# yum remove -y openssl
-	InstallOpenSSLVersion="1.1.1m"
+	InstallOpenSSLVersion="1.1.1q"
 	yum install -y wget tar perl gcc
 	# 判断执行结果
 	if [ $? -ne 0 ]; then
